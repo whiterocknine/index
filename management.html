@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1" />
+  <meta name="renderer" content="webkit" />
+  <title>福达合金智慧园区运维系统</title>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/manage.css" />
+  <script src="js/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var whei = $(window).width()
+      $("html").css({
+        fontSize: whei / 22
+      });
+      $(window).resize(function () {
+        var whei = $(window).width();
+        $("html").css({
+          fontSize: whei / 22
+        })
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="load">
+    <div class="load_img">
+      <img class="jzxz1" src="images/jzxz1.png" />
+      <img class="jzxz2" src="images/jzxz2.png" />
+    </div>
+  </div>
+  <header>
+    <div class="header-logo">
+      <img src="./images/logo.png" alt="" />
+      <span>福达合金智慧园区</span>
+      <div class="header-address">温州·龙湾 滨海四道</div>
+    </div>
+    <div class="header-nav">
+      <div class="header-navname">经营</div>
+      <div class="header-datetime">2020-9-<span></span></div>
+    </div>
+  </header>
+
+  <!--中间-->
+  <div class="content">
+    <!--左边-->
+    <div class="content-left">
+      <!--左上-->
+      <div class="left-top panel">
+        <div class="title">
+          基本信息
+        </div>
+        <div class="list">
+          <p>福达合金材料股份有限公司创办于1994年3月，是一家集电接触材料研发、生产、销售、技术咨询与服务于一体的国家高新技术企业</p>
+          <ul>
+            <li>建筑面积：500亩</li>
+            <li>车间总数：99间</li>
+            <li>员工总数：4000人</li>
+            <li>年总产值：50亿</li>
+            <li>年总产值：4651万</li>
+            <li>年总产值：4546万</li>
+          </ul>
+        </div>
+        <div class="panel-footer"></div>
+      </div>
+      <!--左中-->
+      <div class="left-center panel">
+        <div class="title">
+          品件类别
+        </div>
+        <div class="allnav" id="ceshi"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <!--左下-->
+      <div class="left-bottom panel">
+        <div class="title">
+          园区产能
+        </div>
+        <div class="allnav" id="ceshi2"></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+    <!--中间-->
+    <div class="content-center">
+      <!--头部-->
+      <div class="center-top">
+        <div class="top-title">
+          <ul>
+            <li>
+              <p>供应链</p>
+              <span>3</span>
+              <span>6</span>
+              <span>5</span>
+              <b>个</b>
+            </li>
+            <li>
+              <p>已接入</p>
+              <span>2</span>
+              <span>5</span>
+              <b>%</b>
+            </li>
+          </ul>
+        </div>
+        <div class="top-bottom">
+          <div class="allnav" id="ceshi8"></div>
+        </div>
+
+      </div>
+      <!--底部-->
+      <div class="center-bottom panel">
+        <div class="bottom-left fl">
+          <div class="allnav" id="ceshi6"></div>
+        </div>
+        <div class="bottom-right fr">
+          <div class="allnav" id="ceshi7" style="width: 100%;height: 100%;"></div>
+        </div>
+      </div>
+    </div>
+    <!--右边-->
+    <div class="content-right">
+      <!--右上-->
+      <div class="right-top panel">
+        <!--选项卡内容-->
+        <div id="tab_header">
+          <ul>
+            <li class="selected">工厂信息</li>
+            <li>基地信息</li>
+          </ul>
+        </div>
+        <!--内容-->
+        <div id="tab_content">
+          <div class="dom" style="display: block">
+            <ul>
+              <li>
+                <p>厂一产能</p>
+                <span>1220万</span>
+                <label>元</label>
+              </li>
+              <li>
+                <p>厂二产能</p>
+                <span>3350万</span>
+                <label>元</label>
+              </li>
+              <li>
+                <p>厂三产能</p>
+                <span>6750万</span>
+                <label>元</label>
+              </li>
+            </ul>
+            <div class="list-t">
+              <ul>
+                <li>
+                  <span>50万</span>
+                  <p>生产线</p>
+                </li>
+                <li>
+                  <span>50万</span>
+                  <p>生产线</p>
+                </li>
+                <li>
+                  <span>50万</span>
+                  <p>生产线</p>
+                </li>
+                <li>
+                  <span>50万</span>
+                  <p>生产线</p>
+                </li>
+                <li>
+                  <span>50万</span>
+                  <p>生产线</p>
+                </li>
+                <li>
+                  <span>50万</span>
+                  <p>生产线</p>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+          <div class="dom" style="display: none">
+            <div class="listStyle">
+
+              <span>车间：<strong>560</strong>个</span>
+              <span>供应企业：<strong>36</strong>家</span>
+              <span>经销商：<strong>540</strong>个</span>
+              <span>供应链：<strong>15</strong>条</span>
+              <span>加工基地：<strong>20</strong>个</span>
+              <span>售后卸载：<strong>29</strong>家</span>
+              <span>储存基地：<strong>10</strong>个</span>
+              <span>货运车：<strong>120</strong>台</span>
+              </li>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer"></div>
+      </div>
+      <!--右中-->
+      <div class="right-center panel">
+        <div class="title">
+          <span>销量排行</span>
+        </div>
+
+        <div class="echart wenzi">
+          <div class="gun">
+            <span>名称</span>
+            <span>同比</span>
+            <span>销量</span>
+          </div>
+          <div id="FontScroll" class="myscroll">
+            <ul>
+              <li>
+                <div class="fontInner clearfix">
+                  <span>
+                    <b> 1.银合金线材</b>
+                  </span>
+                  <span>2.3%</span>
+                  <span>45顿</span>
+                </div>
+              </li>
+              <li>
+                <div class="fontInner clearfix">
+                  <span>
+                    <b>2.片状触头</b>
+                  </span>
+                  <span>2.2%</span>
+                  <span>44.5顿</span>
+                </div>
+              </li>
+              <li>
+                <div class="fontInner clearfix">
+                  <span>
+                    <b>3.粉末冶金触头</b>
+                  </span>
+                  <span>2.15%</span>
+                  <span>44.3顿</span>
+                </div>
+              </li>
+              <li>
+                <div class="fontInner clearfix">
+                  <span>
+                    <b>4.铆钉触头AgCu/Cu</b>
+                  </span>
+                  <span>2.1%</span>
+                  <span>43.5顿</span>
+                </div>
+              </li>
+              <li>
+                <div class="fontInner clearfix">
+                  <span>
+                    <b>5.铆钉触头Ag/Cu</b>
+                  </span>
+                  <span>2%</span>
+                  <span>43顿</span>
+                </div>
+              </li>
+              <li>
+                <div class="fontInner clearfix">
+                  <span>
+                    <b>6.铆钉触头AgNi/Cu</b>
+                  </span>
+                  <span>1.95%</span>
+                  <span>42.6顿</span>
+                </div>
+              </li>
+              <li>
+                <div class="fontInner clearfix">
+                  <span>
+                    <b>7.AgSnO₂In₂O₃/C</b>
+                  </span>
+                  <span>1.93%</span>
+                  <span>42.3顿</span>
+                </div>
+              </li>
+              <li>
+                <div class="fontInner clearfix">
+                  <span>
+                    <b>8.AgCdO/Cu</b>
+                  </span>
+                  <span>1.9%</span>
+                  <span>42顿</span>
+                </div>
+              </li>
+              <li>
+                <div class="fontInner clearfix">
+                  <span>
+                    <b>9.AgCuO/Cu</b>
+                  </span>
+                  <span>1.8%</span>
+                  <span>41顿</span>
+                </div>
+              </li>
+              <li>
+                <div class="fontInner clearfix">
+                  <span>
+                    <b>10.AgZnO/Cu</b>
+                  </span>
+                  <span>1.8%</span>
+                  <span>41顿</span>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="panel-footer"></div>
+      </div>
+      <!--右下-->
+      <div class="right-bottom panel">
+        <div class="title">
+          <span>金属成交价</span>
+        </div>
+        <div class="right-bottom-t">
+          <div class="b-left" id="ceshi3"></div>
+          <div class="b-cent" id="ceshi4"></div>
+          <div class="b-right" id="ceshi5"></div>
+        </div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li>
+          <a href="./park.html">
+            <img src="./images/nav-park.png" alt="" />
+            <span>园区大脑</span>
+          </a>
+        </li>
+        <li>
+          <a href="./security.html">
+            <img src="./images/nav-security.png" alt="" />
+            <span>综合安防</span>
+          </a>
+        </li>
+        <li>
+          <a href="./management.html">
+            <img src="./images/nav-energy.png" alt="" />
+            <span>经营</span>
+          </a>
+        </li>
+        <li>
+          <a href="./car/index.html">
+            <img src="./images/nav-park.png" alt="" />
+            <span>车辆</span>
+          </a>
+        </li>
+      </ul>
+      <div class="footer-nav-factor">
+        <a href="./factory.html">
+          <img src="./images/nav-factor.png" alt="" />
+          <span>工厂</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="js/echarts.min.js"></script>
+  <script src="js/manage.js"></script>
+  <script src="js/fontscroll.js"></script>
+  <script src="js/china.js"></script>
+  <script>
+    (function (fn) {
+      fn();
+      setInterval(fn, 1000);
+    })(function () {
+      var dt = new Date();
+      var h = dt.getHours() > 9 ? dt.getHours() : "0" + dt.getHours();
+      var m = dt.getMinutes() > 9 ? dt.getMinutes() : "0" + dt.getMinutes();
+      var s = dt.getSeconds() > 9 ? dt.getSeconds() : "0" + dt.getSeconds();
+      document.querySelector(".header-datetime span").innerHTML =
+        dt.getDate() + " " + h + ":" + m + ":" + s;
+    });
+
+    $(function () {
+      //删除加载动画
+      $("#load").fadeOut(1000);
+      showChart();
+      // setTimeout(function () {
+      //   showChart();
+      // }, 500);
+      setTimeout(function () {
+        $("#load").remove();
+      }, 1100);
+    });
+    $(function () {
+      $('.myscroll').myScroll({
+        speed: 100, //数值越大，速度越慢
+        rowHeight: 38 //li的高度
+      });
+    })
+    $(function () {
+      var allLis = document.getElementById("tab_header").getElementsByTagName("li");
+      var allDom = document.getElementById("tab_content").getElementsByClassName("dom");
+
+      // console.log(allLis, allDom);
+
+      // 2. 遍历监听
+      for (var i = 0; i < allLis.length; i++) {
+        var li = allLis[i];
+        li.index = i;
+
+        li.onclick = function () {
+          console.log(i);
+          for (var j = 0; j < allLis.length; j++) {
+            allLis[j].className = '';
+            allDom[j].style.display = 'none';
+          }
+
+          this.className = 'selected';
+          allDom[this.index].style.display = 'block';
+
+        }
+      }
+    })
+
+    function showChart() {
+      ceshis1();
+      ceshi2();
+      ceshi3();
+      ceshi4();
+      ceshi5();
+      ceshi6();
+      ceshi7();
+      echart_map();
+    }
+  </script>
+</body>
+
+</html>

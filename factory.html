@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <title>福达合金智慧园区运维系统</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/factory.css" />
+    <script src="js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="load">
+      <div class="load_img">
+        <img class="jzxz1" src="images/jzxz1.png" />
+        <img class="jzxz2" src="images/jzxz2.png" />
+      </div>
+    </div>
+    <header>
+      <div class="header-logo">
+        <img src="./images/logo.png" alt="" />
+        <span>福达合金智慧园区</span>
+        <div class="header-address">温州·龙湾 滨海四道</div>
+      </div>
+      <div class="header-nav">
+        <div class="header-navname">工厂</div>
+        <div class="header-datetime">2020-9-<span></span></div>
+      </div>
+    </header>
+    <!--主体-->
+    <div class="main clearfix">
+      <div class="main-left">
+        <div class="border-container panel containertop">
+          <h5 class="name-title">设备状态</h5>
+          <div id="radar">
+            <div class="radarkong">
+              <p class="tile-size-color">
+                设备总数 :<span class="Totalequipment">660个</span> 统计时间
+                :<span>2019.09.22 15:28</span>
+              </p>
+            </div>
+            <div class="pie-chart" id="pie-chart"></div>
+            <ul class="SiteStatusList">
+              <li>
+                <i class="Statusnormal Statussame"></i>
+                正常：<span>556</span>
+              </li>
+              <li>
+                <i class="Statusemergency Statussame"></i>
+                告警：<span>40</span>
+              </li>
+              <li>
+                <i class="StatusOffline Statussame"></i>
+                离线：<span>30</span>
+              </li>
+            </ul>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="border-container panel containerbottom">
+          <div class="name-title">设备类型分布</div>
+          <div class="graduateyear">
+            <div class="bar-chart" id="bar-chart"></div>
+            <ul class="SiteStatusList">
+              <li>本周数据</li>
+              <li class="DataSwitch">
+                <i
+                  class="ThisweekData Datasame"
+                  onclick="DataSwitch(this,1)"
+                ></i>
+                <i class="ThisweekData" onclick="DataSwitch(this,2)"></i>
+              </li>
+              <li class="Defaultgray">本月数据</li>
+            </ul>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <div class="main-middle">
+        <div class="border-container panel containertop">
+          <div class="name-title">故障设备区域分布情况</div>
+          <div id="mapadd">
+            <div class="mapleft">
+              <div class="progress2-chart" id="progress2-chart"></div>
+            </div>
+            <div class="map-chart" id="map-chart"></div>
+            <ul class="Devicestatus-List">
+              <li class="Online2">
+                65.5% <span class="DevicestatusName">在线</span>
+              </li>
+              <li class="Online2">
+                10.5% <span class="DevicestatusName">离线</span>
+              </li>
+              <li class="Online2">
+                10.5% <span class="DevicestatusName">维护</span>
+              </li>
+              <li class="Online2">
+                9.5% <span class="DevicestatusName">故障</span>
+              </li>
+            </ul>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="border-container containerbottom borderno-container">
+          <ul class="teacher-pie clearfix">
+            <li class="teacherList panel">
+              <div class="name-title">故障时段分布</div>
+              <div id="courserate">
+                <div class="line-chart" id="line-chart"></div>
+                <ul class="SiteStatusList">
+                  <li>
+                    <i class="Statusnormal Statussame"></i>
+                    合计故障次数 <span>556</span>
+                  </li>
+                </ul>
+                <div class="panel-footer"></div>
+              </div>
+            </li>
+            <li class="teacherList panel">
+              <div class="name-title">故障类型分布</div>
+              <div class="bars-chart" id="bars-chart"></div>
+              <div class="panel-footer"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-right">
+        <div class="border-container panel containertop">
+          <div class="name-title">优秀车间排名</div>
+          <div class="progress1-chart" id="progress1-chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="border-container panel containerbottom">
+          <div class="name-title">故障类型分布</div>
+          <div id="radar-chart" class="radar-chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-nav">
+        <ul>
+          <li>
+            <a href="./park.html">
+              <img src="./images/nav-park.png" alt="" />
+              <span>园区大脑</span>
+            </a>
+          </li>
+          <li>
+            <a href="./security.html">
+              <img src="./images/nav-security.png" alt="" />
+              <span>综合安防</span>
+              </a>
+          </li>
+          <li>
+            <a href="./management.html">
+            <img src="./images/nav-energy.png" alt="" />
+            <span>经营</span>
+            </a>
+          </li>
+          <li>
+						<a href="./car/index.html">
+							<img src="./images/nav-park.png" alt="" />
+							<span>车辆</span>
+						</a>
+          </li>
+        </ul>
+        <div class="footer-nav-factor">
+          <a href="./factory.html">
+            <img src="./images/nav-factor.png" alt="" />
+						<span>工厂</span>
+					</a>
+        </div>
+      </div>
+    </footer>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/factorychart.js"></script>
+    <script>
+      (function (fn) {
+        fn();
+        setInterval(fn, 1000);
+      })(function () {
+        var dt = new Date();
+        var h = dt.getHours() > 9 ? dt.getHours() : "0" + dt.getHours();
+        var m = dt.getMinutes() > 9 ? dt.getMinutes() : "0" + dt.getMinutes();
+        var s = dt.getSeconds() > 9 ? dt.getSeconds() : "0" + dt.getSeconds();
+        document.querySelector(".header-datetime span").innerHTML =
+          dt.getDate() + " " + h + ":" + m + ":" + s;
+      });
+
+      $(function () {
+        //删除加载动画
+        $("#load").fadeOut(1000);
+        setTimeout(function () {
+          $("#load").remove();
+          showChart();
+        }, 1100);
+      });
+      function showChart() {
+
+      }
+    </script>
+  </body>
+</html>

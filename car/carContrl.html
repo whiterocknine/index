@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>福达合金智慧园区运维系统</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+</head>
+<style>
+
+</style>
+<body>
+    <div id="load">
+        <div class="load_img">
+          <img class="jzxz1" src="../images/jzxz1.png" />
+          <img class="jzxz2" src="../images/jzxz2.png" />
+        </div>
+      </div>
+      <header>
+        <div class="header-logo">
+          <img src="../images/logo.png" alt="" />
+          <span>福达合金智慧园区</span>
+          <div class="header-address">温州·龙湾 滨海四道</div>
+        </div>
+        <div class="header-nav">
+            <a href="../park.html" class="header-back"><i class="icon-back"></i>返回主页</a>
+          <div class="header-navname">车辆管理</div>
+          <div class="header-datetime">2020-9-<span></span></div>
+        </div>
+      </header>
+      <div class="nav-flex">
+        <div class="select_time">
+            <div class="static_top left"><i></i><span>车辆监控</span></div>
+          </div>
+          <div class=" nav text_right">
+            <ul>
+              <li class="">
+                <i class="nav_1"></i><a href="index.html">数据概览</a>
+              </li>
+              <li class="nav_active"><i class="nav_2"></i><a href="carContrl.html">车辆监控</a></li>
+              <li><i class="nav_3"></i><a href="map.html">地图追踪</a></li>
+              <li><i class="nav_7"></i><a href="static.html">查询统计</a></li>
+            </ul>
+          </div>
+     </div>
+
+<!--内容部分-->
+<div class="con1 left" id="car_control">
+<div class="left car_left">
+    <div class="left_up bow_shadow">
+        <p>
+            <input type="text" placeholder="输入车牌号" class="carNo_input"><input type="button" class="find_but">
+        </p>
+
+        <p class="set_list"><i class="list_i"></i> 车辆列表:</p>
+        <p ><ul id="treeDemo" class="ztree"></ul></p>
+    </div>
+    <div class="left_down bow_shadow">
+<div class="text_center"><a href="javascript:void (0)" class="tab_a tab_aActive">基本信息</a><a href="javascript:void (0)" class="tab_a">云台控制</a> </div>
+        <div class="car_content">
+            <p><span>车牌号：</span><span>浙CH5732</span></p>
+            <p><span>驾驶人姓名：</span><span>刘明</span></p>
+            <p><span>车辆品牌：</span><span>别克君越</span></p>
+            <p><span>车辆类型：</span><span>商用车</span></p>
+            <p><span>所属公司：</span><span>福达合金</span></p>
+            <p><span>行驶里程：</span><span>20.0万公里</span></p>
+            <p><span>状态：</span><span>行驶中</span></p>
+            <p><span>所在位置：</span><span>龙湾区五一路</span></p>
+        </div>
+    </div>
+</div>
+    <div class="left car_center">
+        <img src="./img/bigcar1.jpg" alt="" >
+        <img src="./img/bigcar2.jpg" alt="" class="magin_left">
+        <img src="./img/bigcar3.jpg" alt="" class="magin_top">
+        <img src="./img/bigcar4.jpg" alt="" class="magin_top magin_left">
+        <!-- <video controls="controls" ></video>
+        <video controls="controls" class="magin_left"></video>
+        <video controls="controls" class="magin_top"></video>
+        <video controls="controls" class="magin_top magin_left"></video> -->
+    </div>
+    <div class="right car_right" id="map"></div>
+
+
+
+</div>
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/echarts.min.js"></script>
+<script src="js/base.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5ieMMexWmzB9jivTq6oCRX9j&callback"></script>
+<script src="js/car_control.js"></script>
+<script src="js/ztree/jquery.ztree.all-3.5.js"></script>
+<script src="js/listTree.js"></script>
+<script>
+    (function (fn) {
+      fn();
+      setInterval(fn, 1000);
+    })(function () {
+      var dt = new Date();
+      var h = dt.getHours() > 9 ? dt.getHours() : "0" + dt.getHours();
+      var m = dt.getMinutes() > 9 ? dt.getMinutes() : "0" + dt.getMinutes();
+      var s = dt.getSeconds() > 9 ? dt.getSeconds() : "0" + dt.getSeconds();
+      document.querySelector(".header-datetime span").innerHTML =
+        dt.getDate() + " " + h + ":" + m + ":" + s;
+    });
+
+    $(function () {
+      //删除加载动画
+      $("#load").fadeOut(1000);
+      setTimeout(function () {
+        $("#load").remove();
+      }, 1100);
+    });
+  </script>
+</body>
+</html>

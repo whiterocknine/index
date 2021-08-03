@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot');
+  src: url('../fonts/icomoon.eot?hnofmk#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.svg?t=1595291653412#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icomoonfont {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pageexchange:before {
+  content: "\e916";
+}
+
+.icon-lock .path1:before {
+  content: "\e900";
+  color:#3285ff;
+}
+
+.icon-lock .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.icon-lock .path3:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.icon-lock .path4:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: #3285ff;
+}
+
+.icon-fire:before {
+  content: "\e904";
+}
+
+.icon-sofa:before {
+  content: "\e905";
+}
+
+.icon-menu:before {
+  content: "\e906";
+}
+
+.icon-screen:before {
+  content: "\e907";
+}
+
+.icon-sun:before {
+  content: "\e908";
+}
+
+.icon-halfballcam:before {
+  content: "\e909";
+}
+
+.icon-tea:before {
+  content: "\e90a";
+}
+
+.icon-nomeet:before {
+  content: "\e90b";
+}
+
+.icon-meet:before {
+  content: "\e90c";
+}
+
+.icon-allarm:before {
+  content: "\e90d";
+}
+
+.icon-antifire:before {
+  content: "\e90e";
+}
+
+.icon-allarmbell:before {
+  content: "\e90f";
+}
+
+.icon-design:before {
+  content: "\e910";
+}
+
+.icon-camera:before {
+  content: "\e911";
+}
+
+.icon-micro:before {
+  content: "\e912";
+}
+
+.icon-moon:before {
+  content: "\e913";
+}
+
+.icon-balllight:before {
+  content: "\e914";
+}
+
+.icon-fireallarm:before {
+  content: "\e915";
+}
+
+.icon-loading:before {
+  content: "\e97f";
+}
+
+.icon-attdencestyle1:before {
+  content: "\e9e0";
+}
+
+.icon-attdencestyle2:before {
+  content: "\ea52";
+}

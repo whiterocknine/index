@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>福达合金智慧园区运维系统</title>
+    <link rel="stylesheet" href="js/bstable/css/bootstrap.min.css">
+    <link href="css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="js/jQueryPage/src/jquery.page.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="../css/normalize.css" />
+</head>
+<body>
+<!--顶部-->
+<div id="load">
+    <div class="load_img">
+      <img class="jzxz1" src="../images/jzxz1.png" />
+      <img class="jzxz2" src="../images/jzxz2.png" />
+    </div>
+  </div>
+  <header>
+    <div class="header-logo">
+      <img src="../images/logo.png" alt="" />
+      <span>福达合金智慧园区</span>
+      <div class="header-address">温州·龙湾 滨海四道</div>
+    </div>
+    <div class="header-nav">
+        <a href="../park.html" class="header-back"><i class="icon-back"></i>返回主页</a>
+      <div class="header-navname">车辆管理</div>
+      <div class="header-datetime">2020-9-<span></span></div>
+    </div>
+  </header>
+  <div class="nav-flex">
+    <div class="select_time">
+      <div class="static_top left"><i></i><span>地图追踪</span></div>
+    </div>
+    <div class="nav text_right">
+      <ul>
+        <li class="">
+          <i class="nav_1"></i><a href="index.html">数据概览</a>
+        </li>
+        <li >
+          <i class="nav_2"></i><a href="carContrl.html">车辆监控</a>
+        </li>
+        <li class="nav_active"><i class="nav_3"></i><a href="map.html">地图追踪</a></li>
+        <li><i class="nav_7"></i><a href="static.html">查询统计</a></li>
+      </ul>
+    </div>
+  </div>
+  
+<!--内容部分-->
+<div class="map_con left" id="car_control">
+    <!--左侧地图-->
+  <div class="left map_left"  >
+      <div  class="map_box" id="map_box"></div>
+      <div class="map_top">
+          <ul>
+              <li class="active"><i class="glyphicon glyphicon-pencil"></i><a href="javascript:void (0)" class="active">图层选择</a> </li>
+              <li><i class="glyphicon glyphicon-zoom-in"></i><a href="javascript:void (0)">缩小</a> </li>
+              <li><i class="glyphicon glyphicon-zoom-out"></i><a href="javascript:void (0)">放大</a> </li>
+              <li><i class="glyphicon glyphicon-screenshot"></i><a href="javascript:void (0)">对比</a> </li>
+              <li><i class="glyphicon glyphicon-search"></i><a href="javascript:void (0)">搜索</a> </li>
+              <li><i class="glyphicon glyphicon-wrench"></i><a href="javascript:void (0)">工具</a> </li>
+              <li><i class="glyphicon glyphicon-fullscreen"></i><a href="javascript:void (0)">全屏</a> </li>
+          </ul>
+      </div>
+      <div class="map_select">
+          <p><input type="checkbox"><span>行驶中</span></p>
+          <p><input type="checkbox"><span>临停车辆</span></p>
+          <p><input type="checkbox"><span>故障车辆</span></p>
+          <p><input type="checkbox"><span>规划路线</span></p>
+      </div>
+
+  </div>
+
+    <!--右侧功能栏-->
+    <div class="right map_right ">
+        <div class="map_right_top">
+            <ul><li class="li_active">预警信息</li>
+                <li>分类搜索</li>
+                <li>专题信息</li></ul>
+        </div>
+        <div class="map_con">
+            <div class="map_con_div" style="display: block" >
+                <div class="map_chart">
+
+                    <p id="char1" class="p_chart"></p>
+                </div>
+                <div class="div_any_child">
+                    <!--<div class="div_any_title"><img src="img/title_4.png">行驶时长排名前5位 </div>-->
+                    <div class="table_p">
+                        <table>
+                            <thead><tr>
+                                <th>排名</th>
+                                <th>车牌号</th>
+                                <th>时长（km）</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr><td>1</td><td>浙A12345</td><td>134.2</td></tr>
+                            <tr><td>1</td><td>浙A12345</td><td>134.2</td></tr>
+                            <tr><td>1</td><td>浙A12345</td><td>134.2</td></tr>
+                            <tr><td>1</td><td>浙A12345</td><td>134.2</td></tr>
+                            <tr><td>1</td><td>浙A12345</td><td>134.2</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="map_con_div" >
+                <p>
+                    <input type="text" placeholder="输入关键字" class="carNo_input"><input type="button" class="find_but">
+                </p>
+                <div class="map_work">
+                    <ul>
+                        <li>
+                            <div class="img_div img_div01"></div>
+                            <div class="img_div_text">园区</div>
+                        </li>
+                        <li>
+                            <div class="img_div img_div02"></div>
+                            <div class="img_div_text">园区</div>
+                        </li>
+                        <li>
+                            <div class="img_div img_div01"></div>
+                            <div class="img_div_text">园区</div>
+                        </li>
+                        <li>
+                            <div class="img_div img_div01"></div>
+                            <div class="img_div_text">园区</div>
+                        </li>
+                        <li>
+                            <div class="img_div img_div01"></div>
+                            <div class="img_div_text">园区</div>
+                        </li>
+                        <li>
+                            <div class="img_div img_div01"></div>
+                            <div class="img_div_text">园区</div>
+                        </li>
+                        <li>
+                            <div class="img_div img_div01"></div>
+                            <div class="img_div_text">园区</div>
+                        </li>
+                        <li>
+                            <div class="img_div img_div01"></div>
+                            <div class="img_div_text">园区</div>
+                        </li>
+                        <li>
+                            <div class="img_div img_div01"></div>
+                            <div class="img_div_text">园区</div>
+                        </li>
+                    </ul>
+                    <div class="map_resList">
+                        <p class="set_list"><i class="list_i"></i> 查询结果：<span class="right"><i class="glyphicon glyphicon-backward back_i"></i><a href="javascript:void(0)" onclick="back()">返回 </a> </span></p>
+                        <ul>
+                            <li><p><strong>爱尚美术馆</strong><span class="right"><a href="javascript:void(0)" title="视频"><img src="img/nav_5.png"> </a><a href="javascript:void(0)" title="定位"><img src="img/find01.png"> </a> </span></p>
+                            <p>四川省成都市高新区北美一路31号</p></li>
+                            <li><p><strong>爱尚美术馆</strong><span class="right"><a href="javascript:void(0)" title="视频"><img src="img/nav_5.png"> </a><a href="javascript:void(0)" title="定位"><img src="img/find01.png"> </a> </span></p>
+                                <p>四川省成都市高新区北美一路31号</p></li>
+                            <li><p><strong>爱尚美术馆</strong><span class="right"><a href="javascript:void(0)" title="视频"><img src="img/nav_5.png"> </a><a href="javascript:void(0)" title="定位"><img src="img/find01.png"> </a> </span></p>
+                                <p>四川省成都市高新区北美一路31号</p></li>
+                            <li><p><strong>爱尚美术馆</strong><span class="right"><a href="javascript:void(0)" title="视频"><img src="img/nav_5.png"> </a><a href="javascript:void(0)" title="定位"><img src="img/find01.png"> </a> </span></p>
+                                <p>四川省成都市高新区北美一路31号</p></li>
+                            <li><p><strong>爱尚美术馆</strong><span class="right"><a href="javascript:void(0)" title="视频"><img src="img/nav_5.png"> </a><a href="javascript:void(0)" title="定位"><img src="img/find01.png"> </a> </span></p>
+                                <p>四川省成都市高新区北美一路31号</p></li>
+                        </ul>
+                        <div id="page"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="map_con_div">
+                <div class=" bow_shadow">
+                    <p>
+                        <input type="text" placeholder="输入关键字" class="carNo_input"><input type="button" class="find_but">
+                    </p>
+
+                    <p class="set_list"><i class="list_i"></i> 专题列表：</p>
+                    <p ><ul id="treeDemo" class="ztree"></ul></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="js/base.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5ieMMexWmzB9jivTq6oCRX9j&callback"></script>
+<script src="js/jQueryPage/src/jquery.page.js"></script>
+<script src="js/map_control.js"></script>
+<script src="js/ztree/jquery.ztree.all-3.5.js"></script>
+<script src="js/listTree.js"></script>
+<script>
+    (function (fn) {
+      fn();
+      setInterval(fn, 1000);
+    })(function () {
+      var dt = new Date();
+      var h = dt.getHours() > 9 ? dt.getHours() : "0" + dt.getHours();
+      var m = dt.getMinutes() > 9 ? dt.getMinutes() : "0" + dt.getMinutes();
+      var s = dt.getSeconds() > 9 ? dt.getSeconds() : "0" + dt.getSeconds();
+      document.querySelector(".header-datetime span").innerHTML =
+        dt.getDate() + " " + h + ":" + m + ":" + s;
+    });
+
+    $(function () {
+      //删除加载动画
+      $("#load").fadeOut(1000);
+      setTimeout(function () {
+        $("#load").remove();
+      }, 1100);
+    });
+  </script>
+</body>
+</html>

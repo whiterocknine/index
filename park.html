@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>福达合金智慧园区运维系统</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/park.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="css/swiper.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="load">
+      <div class="load_img">
+        <img class="jzxz1" src="images/jzxz1.png" />
+        <img class="jzxz2" src="images/jzxz2.png" />
+      </div>
+    </div>
+    <header>
+      <div class="header-logo">
+        <img src="./images/logo.png" alt="" />
+        <span>福达合金智慧园区</span>
+        <div class="header-address">温州·龙湾 滨海四道</div>
+      </div>
+      <div class="header-nav">
+        <div class="header-navname">园区大脑</div>
+        <div class="header-datetime">2020-9-<span></span></div>
+      </div>
+    </header>
+    <div id="fengMap"></div>
+    <section class="mainbox">
+      <div class="alarmBox">
+        <div class="panel alarmBox">
+          <div class="alarmBox-cont">
+            <h2>未处理告警信息</h2>
+            <div class="alarmBox-Untreated">
+              <div class="Untreated-header">
+                紧急
+                <span class="Untreated-address">禁区误闯报警</span>
+              </div>
+              <img src="./images/alarm-pic.png" alt="" />
+            </div>
+            <div class="alarmBox-tabOption">
+              <ul>
+                <li>
+                  <span class="color-wihite">当前状况</span>
+                  <div class="i-flex-auto">
+                    <span>全部(20)</span>
+                    <span>待处理(20)</span>
+                    <span>已完成(0)</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="color-wihite">风险级别</span>
+                  <div class="i-flex-auto">
+                    <span onclick="showAlarmLevel('all')">全部(20)</span>
+                    <span class="color-red" onclick="showAlarmLevel(2)"
+                      >报警(20)</span
+                    >
+                    <span class="color-orange" onclick="showAlarmLevel(1)"
+                      >异常(0)</span
+                    >
+                    <span class="color-yellow" onclick="showAlarmLevel(0)"
+                      >提示(0)</span
+                    >
+                  </div>
+                </li>
+                <li>
+                  <span class="color-wihite">应用类型</span>
+                  <div class="i-flex-auto">
+                    <span>用电(0)</span>
+                    <span>安防(0)</span>
+                    <span>消防(0)</span>
+                    <span>停车场(0)</span>
+                    <span>电梯(0)</span>
+                    <span>会议(0)</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="alarmBox-list" id="alarmBoxList">
+              <!-- <ul>
+                <li class="alarmStatus-yellow">
+                  <span>
+                    <span>危急</span>
+                  </span>
+                  <span class="alarmItem-name">工厂贵金属堆料区 B-39</span>
+                  <span>待处理</span>
+                  <span>09/04 15:33</span>
+                </li>
+              </ul> -->
+            </div>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <div class="column">
+        <div id="btnsGroup" class="flexBtnsGroup">
+          <button onClick="addAlertMarkerFunc(this)">火情讯号</button>
+          <button onClick="deleteAll(this)">清除</button>
+        </div>
+      </div>
+      <div class="column column-3">
+        <div class="panel flexItem">
+          <div class="">
+            <h2>环境监测</h2>
+            <div class="item-weather">
+              <ul>
+                <li>
+                  <img src="./images/icon-weather.png" alt="" />
+                  <span>27℃</span>
+                </li>
+                <li>
+                  <img src="./images/icon-humidity.png" alt="" />
+                  <span>60%</span>
+                </li>
+                <li>
+                  <img src="./images/icon-pm.png" alt="" />
+                  <span>50ug/m%</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel-item panel-office">
+            <h2>办公区域监测</h2>
+            <div class="item-office">
+              <ul class="flexItem" id="item-officeList">
+                <!-- <li>
+                  <div class="office-status">
+                    <i class="icon-office"></i>
+                  </div>
+                  <span>会议室一</span>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+
+        <div class="flexItem">
+          <div class="panel panel-item dataBox-left">
+            <div class="flexItem">
+              <div class="panel-item">
+                <h2>出入车辆</h2>
+                <div class="item-imgbox">
+                  <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <img src="./images/京NA6K90.gif" alt="" />
+                        <div class="item-carInfo">
+                          <span>入口B <strong>京NA6K90</strong></span>
+                          <span class="item-carInfo-time">07:18:56</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./images/京NS4692.gif" alt="" />
+                        <div class="item-carInfo">
+                          <span>入口A <strong>京NS4692</strong></span>
+                          <span class="item-carInfo-time">09:45:12</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./images/京P36J08.gif" alt="" />
+                        <div class="item-carInfo">
+                          <span>入口C <strong>京P36J08</strong></span>
+                          <span class="item-carInfo-time">12:27:56</span>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./images/京Q686K3.gif" alt="" />
+                        <div class="item-carInfo">
+                          <span> 出口 <strong>京Q686K3</strong></span>
+                          <span class="item-carInfo-time">15:33:16</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="panel-item dataBox-people">
+                <h2>今日流量</h2>
+                <div class="flexItem">
+                  <div>
+                    <img src="./images/icon-visit.png" alt="" />
+                  </div>
+                  <div class="item-people">
+                    <span><strong>20</strong> 人次</span>
+                    <span>访客</span>
+                  </div>
+                </div>
+                <div class="flexItem">
+                  <div>
+                    <img src="./images/icon-staff.png" alt="" />
+                  </div>
+                  <div class="item-people">
+                    <span><strong>89</strong> 人次</span>
+                    <span>员工</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer"></div>
+          </div>
+          <div class="panel bar panel-item">
+            <h2>安防检测</h2>
+            <div class="data-total">
+              <div class="i-flex-auto">摄像头总数： <span>133</span>个</div>
+              <div class="i-flex-auto">
+                异常摄像头数： <span class="color-red">3</span>个
+              </div>
+            </div>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+          </div>
+        </div>
+
+        <div class="flexItem">
+          <div class="panel line panel-item dataBox-left">
+            <h2>用电一览</h2>
+            <div class="data-total">
+              <div class="i-flex-auto">
+                当前负荷： <span class="energy-num">119,52</span> kw
+              </div>
+              <div class="i-flex-auto">
+                当前电费： <span class="energy-num">6.63</span> 万元
+              </div>
+            </div>
+            <div class="chart"></div>
+            <div class="panel-footer"></div>
+          </div>
+          <div class="panel pie panel-item">
+            <h2>工单统计</h2>
+            <div class="chart" style="height: 200px"></div>
+            <!-- <div class="chart-rows">
+              <div class="piechart chart1"></div>
+              <div class="piechart chart2"></div>
+            </div> -->
+            <div class="panel-footer"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-nav">
+        <ul>
+          <li>
+            <a href="./park.html">
+              <img src="./images/nav-park.png" alt="" />
+              <span>园区大脑</span>
+            </a>
+          </li>
+          <li>
+            <a href="./security.html">
+              <img src="./images/nav-security.png" alt="" />
+              <span>综合安防</span>
+              </a>
+          </li>
+          <li>
+            <a href="./management.html">
+            <img src="./images/nav-energy.png" alt="" />
+            <span>经营</span>
+            </a>
+          </li>
+          <li>
+						<a href="./car/index.html">
+							<img src="./images/nav-park.png" alt="" />
+							<span>车辆</span>
+						</a>
+          </li>
+        </ul>
+        <div class="footer-nav-factor">
+          <a href="./factory.html">
+            <img src="./images/nav-factor.png" alt="" />
+						<span>工厂</span>
+					</a>
+        </div>
+      </div>
+    </footer>
+    <div id="popInfoWindow" class="popInfoWindow">
+      <div class="popInfoWindowMask"></div>
+      <div class="popInfoWindowModal animated fadeIn">
+        <i class="icon-close" onclick="closePopInfoWindow()"></i>
+        <div class="popInfoWindow-header">火情处理-人员选择</div>
+        <div class="popInfoWindow-cont">
+          <ul class="popInfoWindow-ul">
+            <!-- 人员列表 -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="popInfoOffice" class="popInfoWindow">
+      <div class="popInfoWindowMask"></div>
+      <div class="popInfoWindowModal animated fadeIn">
+        <i class="icon-close" onclick="closePopInfoWindow()"></i>
+        <div class="popInfoWindow-header">会议室-申请</div>
+        <div class="popInfoWindow-cont">
+          <ul class="popInfoOffice-ul">
+            <li>
+              <label for="">申请人</label>
+              <input
+                type="text"
+                name=""
+                id=""
+                value="admin"
+                laceholder="请输入会议申请人"
+              />
+            </li>
+            <li>
+              <label for="">开始时间</label>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="请输入会议开始时间"
+              />
+            </li>
+            <li>
+              <label for="">会议时长</label>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="请输入会议时长，以小时为单位"
+              />
+            </li>
+          </ul>
+          <div class="offcie-btn">提交申请</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-info" id="modeInfoPop">
+      <i class="icon-success"></i><span>通知成功</span>
+    </div>
+
+    <!-- <script src="js/flexible.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/parkchart.js"></script>
+    <script src="js/alarm.js"></script>
+    <script src="js/office.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.SuperSlide.2.1.3.js"></script>
+    <!-- 引入gui -->
+    <!-- <script src="lib/dat.gui.min.js"></script> -->
+
+    <!-- 引入fengmap -->
+    <script src="lib/fengmap.core.min.js"></script>
+    <script src="lib/fengmap.control.min.js"></script>
+    <script src="lib/fengmap.analyzer.min.js"></script>
+    <script src="lib/fengmap.navi.min.js"></script>
+    <script src="lib/fengmap.render.min.js"></script>
+    <!-- <script src="./js/data.js"></script> -->
+
+    <script src="js/fengmap.js"></script>
+    <!-- <script src="js/dom.js"></script> -->
+    <script>
+      (function (fn) {
+        fn();
+        setInterval(fn, 1000);
+      })(function () {
+        var dt = new Date();
+        var h = dt.getHours() > 9 ? dt.getHours() : "0" + dt.getHours();
+        var m = dt.getMinutes() > 9 ? dt.getMinutes() : "0" + dt.getMinutes();
+        var s = dt.getSeconds() > 9 ? dt.getSeconds() : "0" + dt.getSeconds();
+        document.querySelector(".header-datetime span").innerHTML =
+          dt.getDate() + " " + h + ":" + m + ":" + s;
+      });
+      var swiper = new Swiper(".swiper-container", {
+        // pagination: ".swiper-pagination",
+        // nextButton: ".swiper-button-next",
+        // prevButton: ".swiper-button-prev",
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false,
+      });
+
+      $(function () {
+        //删除加载动画
+        $("#load").fadeOut(1000);
+        setTimeout(function () {
+          $("#load").remove();
+          showChart();
+        }, 1100);
+      });
+      function showChart() {
+        showChartBar(); //柱形图
+        showChartPie();
+        // showChartPie1(); //饼图
+        // showChartPie2();
+        showChartLine();
+      }
+    </script>
+  </body>
+</html>

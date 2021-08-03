@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>福达合金智慧园区运维系统</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/park.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/security.css" />
+    <link rel="stylesheet" href="css/iconfont.css" />
+  </head>
+
+  <body>
+    <div id="load">
+      <div class="load_img">
+        <img class="jzxz1" src="images/jzxz1.png" />
+        <img class="jzxz2" src="images/jzxz2.png" />
+      </div>
+    </div>
+    <header>
+      <div class="header-logo">
+        <img src="./images/logo.png" alt="" />
+        <span>福达合金智慧园区</span>
+        <div class="header-address">温州·龙湾 滨海四道</div>
+      </div>
+      <div class="header-nav">
+        <div class="header-navname">综合安防</div>
+        <div class="header-datetime">2020-9-<span></span></div>
+      </div>
+    </header>
+    <div id="fengMap"></div>
+    <section class="mainbox">
+      <div class="column column-1">
+        <div class="panel bar">
+          <h2>人流汇聚</h2>
+          <div class="chart"></div>
+          <div class="data-total">
+            <div class="i-flex">
+              <div class="i-flex-auto">
+                昨日上班：<span class="time-num">08:59</span>
+              </div>
+              <div class="i-flex-auto">
+                昨日下班：<span class="time-num">18:30</span>
+              </div>
+            </div>
+            <div class="i-flex">
+              <div class="i-flex-auto">
+                过去一个月的平均：<span class="time-num">08:30</span>
+              </div>
+              <div class="i-flex-auto">
+                过去一个月的平均：<span class="time-num">18:49</span>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel">
+          <h2>门禁控制</h2>
+          <div class="accessControl">
+            <ul class="flexItem">
+              <li>
+                <div class="accessControl-department">
+                  <i class="icomoonfont icon-menu"></i>
+                  <div class="department-info">
+                    <div class="department-name">办公区3</div>
+                    <div class="department-accessControl">
+                      <span class="icomoonfont icon-lock"
+                        ><span class="path1"></span><span class="path2"></span
+                        ><span class="path3"></span><span class="path4"></span
+                      ></span>
+                      <div class="department-lockBtn">
+                        <input
+                          type="checkbox"
+                          name="lockBtn"
+                          id="lock1"
+                          class="department-checbox lockBtn1"
+                        />
+                        <label
+                          for="lock1"
+                          onclick="changeAccessControl(0)"
+                        ></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accessControl-department department-pattern">
+                  <div class="pattern-item">
+                    <div class="pattern-icon">
+                      <i class="icomoonfont icon-antifire"></i>
+                    </div>
+                    <span>消防</span>
+                  </div>
+                  <div class="pattern-item active">
+                    <div class="pattern-icon">
+                      <i class="icomoonfont icon-sun"></i>
+                    </div>
+                    <span>午休</span>
+                  </div>
+                  <div class="pattern-item">
+                    <div class="pattern-icon">
+                      <i class="icomoonfont icon-moon"></i>
+                    </div>
+                    <span>夜间</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accessControl-department">
+                  <i class="icomoonfont icon-sofa"></i>
+                  <div class="department-info">
+                    <div class="department-name">办公区4</div>
+                    <div class="department-accessControl">
+                      <span class="icomoonfont icon-lock"
+                        ><span class="path1"></span><span class="path2"></span
+                        ><span class="path3"></span><span class="path4"></span
+                      ></span>
+                      <div class="department-lockBtn">
+                        <input
+                          type="checkbox"
+                          name="lockBtn"
+                          id="lock2"
+                          class="department-checbox"
+                        />
+                        <label
+                          for="lock2"
+                          onclick="changeAccessControl(1)"
+                        ></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accessControl-department">
+                  <i class="icomoonfont icon-screen"></i>
+                  <div class="department-info">
+                    <div class="department-name">办公区5</div>
+                    <div class="department-accessControl">
+                      <span class="icomoonfont icon-lock"
+                        ><span class="path1"></span><span class="path2"></span
+                        ><span class="path3"></span><span class="path4"></span
+                      ></span>
+                      <div class="department-lockBtn">
+                        <input
+                          type="checkbox"
+                          name="lockBtn"
+                          id="lock3"
+                          class="department-checbox"
+                        />
+                        <label
+                          for="lock3"
+                          onclick="changeAccessControl(2)"
+                        ></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accessControl-department">
+                  <i class="icomoonfont icon-design"></i>
+                  <div class="department-info">
+                    <div class="department-name">办公区6</div>
+                    <div class="department-accessControl">
+                      <span class="icomoonfont icon-lock"
+                        ><span class="path1"></span><span class="path2"></span
+                        ><span class="path3"></span><span class="path4"></span
+                      ></span>
+                      <div class="department-lockBtn">
+                        <input
+                          type="checkbox"
+                          name="lockBtn"
+                          id="lock4"
+                          class="department-checbox"
+                        />
+                        <label
+                          for="lock4"
+                          onclick="changeAccessControl(3)"
+                        ></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="accessControl-department">
+                  <i class="icomoonfont icon-tea"></i>
+                  <div class="department-info">
+                    <div class="department-name">办公区7</div>
+                    <div class="department-accessControl">
+                      <span class="icomoonfont icon-lock"
+                        ><span class="path1"></span><span class="path2"></span
+                        ><span class="path3"></span><span class="path4"></span
+                      ></span>
+                      <div class="department-lockBtn">
+                        <input
+                          type="checkbox"
+                          name="lockBtn"
+                          id="lock5"
+                          class="department-checbox"
+                        />
+                        <label
+                          for="lock5"
+                          onclick="changeAccessControl(4)"
+                        ></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel">
+          <a href="./monitor.html" class="monitor-camera"
+            ><i class="icomoonfont icon-camera"></i
+          ></a>
+          <h2>监控画面</h2>
+          <div class="monitorList">
+            <div class="monitor-item">
+              <video
+                src="./video/2020-09-23 10-20-13_x264.mp4"
+                loop="loop"
+                autoplay="autoplay"
+              ></video>
+            </div>
+            <div class="monitor-item">
+              <video
+                src="./video/2020-09-23 10-22-11_batch.mp4"
+                loop="loop"
+                autoplay="autoplay"
+              ></video>
+            </div>
+            <div class="monitor-item">
+              <video
+                src="./video/2020-09-23 10-34-12_batch.mp4"
+                loop="loop"
+                autoplay="autoplay"
+              ></video>
+            </div>
+            <div class="monitor-item">
+              <video
+                src="./video/2020-09-23 10-20-13_x264.mp4"
+                loop="loop"
+                autoplay="autoplay"
+              ></video>
+            </div>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <div class="column column-mid">
+        <div class="map-controls">
+          <div class="controls-left">
+            <div class="controls-item">
+              <div
+                class="controls-itemcont"
+              >
+                <input type="checkbox" checked onclick="changeFacLayerVis('camera')" /><span>摄像头</span>
+              </div>
+            </div>
+            <div class="controls-item checkbox-disabled">
+              <div class="controls-itemcont">
+                <input type="checkbox" /><span>照明</span>
+              </div>
+            </div>
+            <div class="controls-item">
+              <div
+                class="controls-itemcont"
+              >
+                <input type="checkbox" checked onclick="changeFacLayerVis('door')" /><span>门禁</span>
+              </div>
+            </div>
+            <div class="controls-item checkbox-disabled">
+              <div class="controls-itemcont">
+                <input type="checkbox" disabled /><span>巡检点</span>
+              </div>
+            </div>
+            <div class="controls-item checkbox-disabled">
+              <div class="controls-itemcont">
+                <input type="checkbox" disabled /><span>设备点位</span>
+              </div>
+            </div>
+            <div class="controls-item checkbox-disabled">
+              <div class="controls-itemcont">
+                <input type="checkbox" disabled /><span>消防点位</span>
+              </div>
+            </div>
+          </div>
+          <div class="controls-right">
+            <div class="controls-item checkbox-disabled">
+              <div class="controls-itemcont">
+                <input type="checkbox" disabled /><span>空间分布</span>
+              </div>
+            </div>
+            <div class="controls-item checkbox-disabled">
+              <div class="controls-itemcont">
+                <input type="checkbox" disabled /><span>资源分布</span>
+              </div>
+            </div>
+            <div class="controls-item controls-radio">
+              <div class="controls-itemcont">
+                <input type="checkbox" onclick="showRandomHeatmap()" /><span>人流热力图</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column column-1">
+        <div class="panel" id="attendanceBox">
+          <i
+            class="icomoonfont icon-halfballcam"
+            onclick="showCamaraVideo()"
+          ></i>
+          <h2>考勤访客</h2>
+          <div class="attendanceVisitors showVis">
+            <div class="visitors-line"></div>
+            <ul>
+              <!-- <li class="visitors-item">
+                    <div class="visitors-right">
+                        <div class="visitors-name"><span>员工id：ID001</span> 匹配成功</div>
+                        <div class="visitors-pic">
+                            <i class="icon-visitorsStatus visitors-success"></i>
+                            <img src="./images/face/id001.jpg" alt="">
+                            <img src="./images/face/sys/id001.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="visitors-point"></div>
+                    <div class="visitors-left">
+                        <div class="visitors-time">17:50:41</div>
+                        <div class="visitors-match">相似度 95%</div>
+                    </div>
+                </li>
+             -->
+            </ul>
+          </div>
+
+          <div class="attendanceVisitors showCameraVis" style="display: none">
+            <div class="visitors-line"></div>
+            <ul>
+              <!-- 根据视频进行播放 -->
+            </ul>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel">
+          <h2>设备统计</h2>
+          <div class="deviceStatistics">
+            <div class="device-item">
+              <div class="device-info">
+                <i class="icomoonfont icon-camera"></i>
+                <div class="device-cont">
+                  <span><strong>45</strong>个</span>
+                  <span>摄像头</span>
+                </div>
+              </div>
+              <div class="device-info">
+                <i class="icomoonfont icon-allarm"></i>
+                <div class="device-cont">
+                  <span><strong>1</strong>个</span>
+                  <span>故障</span>
+                </div>
+              </div>
+              <div class="device-info">
+                <i class="icomoonfont icon-allarmbell"></i>
+                <div class="device-cont">
+                  <span><strong>3</strong>个</span>
+                  <span>报警</span>
+                </div>
+              </div>
+            </div>
+            <div class="device-item">
+              <div class="device-info">
+                <i class="icomoonfont icon-fire"></i>
+                <div class="device-cont">
+                  <span><strong>15</strong>个</span>
+                  <span>消防点位</span>
+                </div>
+              </div>
+              <div class="device-info">
+                <i class="icomoonfont icon-allarm"></i>
+                <div class="device-cont">
+                  <span><strong>0</strong>个</span>
+                  <span>故障</span>
+                </div>
+              </div>
+              <div class="device-info"></div>
+            </div>
+            <div class="device-item">
+              <div class="device-info">
+                <i class="icomoonfont icon-balllight"></i>
+                <div class="device-cont">
+                  <span><strong>23</strong>个</span>
+                  <span>照明设备</span>
+                </div>
+              </div>
+              <div class="device-info">
+                <i class="icomoonfont icon-allarm"></i>
+                <div class="device-cont">
+                  <span><strong>2</strong>个</span>
+                  <span>故障</span>
+                </div>
+              </div>
+              <div class="device-info"></div>
+            </div>
+          </div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-nav">
+        <ul>
+          <li>
+            <a href="./park.html">
+              <img src="./images/nav-park.png" alt="" />
+              <span>园区大脑</span>
+            </a>
+          </li>
+          <li>
+            <a href="./security.html">
+              <img src="./images/nav-security.png" alt="" />
+              <span>综合安防</span>
+              </a>
+          </li>
+          <li>
+            <a href="./management.html">
+            <img src="./images/nav-energy.png" alt="" />
+            <span>经营</span>
+            </a>
+          </li>
+          <li>
+						<a href="./car/index.html">
+							<img src="./images/nav-park.png" alt="" />
+							<span>车辆</span>
+						</a>
+          </li>
+        </ul>
+        <div class="footer-nav-factor">
+          <a href="./factory.html">
+            <img src="./images/nav-factor.png" alt="" />
+						<span>工厂</span>
+					</a>
+        </div>
+      </div>
+    </footer>
+    <!-- 摄像头 弹窗 -->
+    <div id="popInfoWindow" class="popInfoWindow">
+      <div class="popInfoWindowMask"></div>
+      <div class="popInfoWindowModal animated fadeIn">
+        <i class="icon-close" onclick="closePopInfoWindow(1)"></i>
+        <div class="popInfoWindow-header">摄像头</div>
+        <div class="popInfoWindow-cont">
+          <video
+            src="./video/2020-09-23 10-20-13_x264.mp4"
+            loop="loop"
+            autoplay="autoplay"
+          ></video>
+        </div>
+      </div>
+    </div>
+    <!-- 考勤监控弹窗 -->
+    <div id="popInfoWindow2" class="popInfoWindow">
+      <div class="popInfoWindowModal animated fadeIn">
+        <i class="icon-close" onclick="closePopInfoCamera()"></i>
+        <div class="popInfoWindow-header">考勤监控</div>
+        <div class="popInfoWindow-cont">
+          <video
+            src="./video/office-rec_cut_narrow.mp4"
+            loop="loop"
+            id="cameraVido"
+          ></video>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-info" id="modeInfoPop">
+      <!-- <i class="icon-success"></i><span>通知成功</span> -->视频故障不可播放
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.SuperSlide.2.1.3.js"></script>
+    <script src="js/securitychart.js"></script>
+    <script src="js/security-visitor.js"></script>
+
+    <!-- 引入fengmap -->
+    <script src="lib/fengmap.core.min.js"></script>
+    <script src="lib/fengmap.control.min.js"></script>
+    <script src="lib/fengmap.analyzer.min.js"></script>
+    <script src="lib/fengmap.navi.min.js"></script>
+    <script src="lib/fengmap.render.min.js"></script>
+    <script src="js/security.js"></script>
+
+    <script>
+      (function (fn) {
+        fn();
+        setInterval(fn, 1000);
+      })(function () {
+        var dt = new Date();
+        var h = dt.getHours() > 9 ? dt.getHours() : "0" + dt.getHours();
+        var m = dt.getMinutes() > 9 ? dt.getMinutes() : "0" + dt.getMinutes();
+        var s = dt.getSeconds() > 9 ? dt.getSeconds() : "0" + dt.getSeconds();
+        document.querySelector(".header-datetime span").innerHTML =
+          dt.getDate() + " " + h + ":" + m + ":" + s;
+      });
+
+      $(function () {
+        //删除加载动画
+        $("#load").fadeOut(1000);
+        setTimeout(function () {
+          $("#load").remove();
+          showChart();
+        }, 1100);
+      });
+      function showChart() {
+        showChartBar();
+      }
+
+      jQuery("#attendanceBox").slide({
+        mainCell: ".showVis ul",
+        autoPlay: true,
+        effect: "topMarquee",
+        vis: 3,
+        interTime: 40,
+        trigger: "click",
+      });
+    </script>
+  </body>
+</html>

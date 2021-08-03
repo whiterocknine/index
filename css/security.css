@@ -1,0 +1,414 @@
+.column-1{
+    flex: 1.4!important;
+}
+.data-total {
+    margin-bottom: 0;
+}
+
+.time-num {
+    color: #3285ff;
+    font-family: electronicFont;
+    font-size: 20px;
+}
+
+.accessControl ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.accessControl ul li {
+    flex: 1;
+    padding: 5px;
+}
+
+.accessControl-department {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(36, 46, 87, 0.24);
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.accessControl-department > i.icomoonfont {
+    width: 36px;
+    height: 36px;
+    display: block;
+    font-size: 36px;
+    color: #a1addc;
+    margin-left: 10px;
+}
+.accessControl-department > i.icomoonfont.icon-sofa{
+    font-size: 38px;
+}
+.accessControl-department > i.icomoonfont.icon-screen{
+    font-size: 32px;
+}
+
+.department-info {
+    color: #f7f7f7;
+    margin-left: 20px;
+}
+.department-name{
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #a1addc;
+}
+
+.department-accessControl{
+    display: flex;
+
+}
+.department-accessControl.icon-lock{
+    font-size: 18px;
+}
+
+
+.department-accessControl.lock-closed .icon-lock .path1::before,
+.department-accessControl.lock-closed .icon-lock .path4::before{
+    color: #2acb9b!important
+}
+
+
+.department-lockBtn {
+    margin-left: 10px;
+}
+.department-lockBtn input[type="checkbox"] {
+    display: none;
+}
+
+.department-lockBtn input[type="checkbox"]+label {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    position: relative;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.department-lockBtn input[type="checkbox"]+label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 20px;
+    height: 20px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+input[type='checkbox'].department-checbox:checked+label {
+    border-color: #2acb9b;
+}
+
+input[type='checkbox'].department-checbox:checked+label:after {
+    background: #2acb9b;
+}
+
+input[type='checkbox'].department-checbox:checked+label:after {
+    left: calc(100% - 14px);
+}
+
+input[type='checkbox'].department-checbox+label {
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+input[type='checkbox'].department-checbox+label:after {
+    background: #ddd;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    top: 2px;
+    left: 2px;
+}
+
+
+
+.department-pattern{
+    text-align: center;
+    justify-content: space-between;
+}
+.pattern-item {
+    cursor: pointer;
+}
+.pattern-icon{
+    margin-bottom: 10px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pattern-icon i.icomoonfont{
+    font-size: 34px;
+    color: #a1addc;
+}
+.pattern-item span{
+    display: block;
+    color: #a1addc;
+    font-size: 14px;
+    text-align: center;
+}
+.pattern-icon i.icon-moon{
+    font-size: 28px;
+}
+.pattern-item.active i.icomoonfont,
+.pattern-item.active span,
+.pattern-item:hover i.icomoonfont,
+.pattern-item:hover span{
+    color: #fff;
+}
+
+/*设备统计*/
+.deviceStatistics{
+
+}
+
+.device-item{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(36, 46, 87, 0.24);
+    padding: 10px;
+    border-radius: 2px;
+    color: #eee;
+    margin-top: 10px;
+}
+.device-item:first-child{
+    margin-top: 0;
+}
+
+.device-info{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+}
+.device-info:first-child{
+    justify-content: flex-start;
+}
+
+.device-info:last-child{
+    justify-content: flex-end;
+}
+.device-info >i.icomoonfont{
+    font-size: 24px;
+}
+.device-cont {
+    margin-left: 10px;
+}
+.device-cont span strong{
+    color: #3285ff;
+    font-size:14px
+}
+.device-cont span{
+    display: block;
+    font-size: 12px;
+    margin-bottom: 5px;
+    color: #999;
+}
+
+
+/**考勤*/
+.icomoonfont.icon-halfballcam{
+    font-size: 24px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: #fff;
+    cursor: pointer;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.icomoonfont.icon-halfballcam:hover{
+    color: #3285ff;
+}
+.attendanceVisitors{
+    position: relative;
+}
+.attendanceVisitors ul {
+    min-height: 400px;
+}
+.visitors-line{
+    width: 1px;
+    background: rgb(65 85 113);
+    position: absolute;
+    /* display: flex; */
+    height: 100%;
+    right: 29%;
+    top: 5px;
+}
+
+.visitors-item{
+    display: flex;
+    position: relative;
+    margin-top: 10px;
+    height: 151px;
+}
+.visitors-item:first-child{
+    margin-top: 0;
+}
+.visitors-left,
+.visitors-right{
+    flex: 1;
+    /* overflow: hidden; */
+}
+.visitors-left{
+    color: #7881AC;
+    text-align: left;
+    font-size: 14px;
+}
+.visitors-time{
+    margin-bottom: 10px;
+    padding-top: 2px;
+    color:#DAE1FF ;
+    font-size: 14px;
+}
+.visitors-match{
+    font-size: 12px;
+}
+.visitors-name{
+    color:#DAE1FF ;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-top: 2px;
+}
+.visitors-name span{
+    color:#7881AC;
+    font-size: 12px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.visitors-pic {
+    display: flex;
+    background: rgba(36, 46, 87, 0.24);
+    padding: 10px;
+    position: relative;
+}
+.visitors-pic img {
+    width: 100px;
+    display: block;
+    margin: 2px;
+    border-radius: 8px;
+    border: 2px solid #7881AC;
+}
+.icon-visitorsStatus{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+}
+i.visitors-success{
+    width: 24px;
+    height: 24px;
+    background: url("../images/icon-visitor-success.png") no-repeat 0 0;
+    background-size: cover;
+}
+.visitors-point{
+    width: 18px;
+    height: 18px;
+    background: url("../images/icon-point.png") no-repeat 0 0;
+    background-size: cover;
+    margin: 0 10px;
+}
+
+
+
+
+/**监控视频*/
+.monitor-camera i{
+    font-size: 24px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.6;
+}
+.monitor-camera:hover i{
+    opacity: 0.8;
+    color: #3285ff;
+}
+.monitorList{
+    display: flex;
+    flex-wrap: wrap;
+}
+.monitor-item{
+    flex: 48%;
+    margin: 1%;
+    background: rgba(36, 46, 87, 0.24);
+}
+.monitor-item video{
+    padding:5px;
+    height: 90px;
+}
+
+
+/*模型控制平台*/
+
+.map-controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background: rgba(255,255,255,0.1);
+    margin: 20px 30px 0;
+    border-radius: 4px;
+}
+
+.controls-left,.controls-right{
+    display: flex;
+}
+
+.controls-item{
+    color: #c2c5d3;
+    font-size: 14px;
+    margin-right: 20px;
+}
+.controls-item .controls-itemcont {
+    display: flex;
+    align-items: center;
+}
+.controls-item input{
+    margin-right: 5px;
+    background: transparent;
+    height: 20px;
+    -webkit-appearance: none;
+    border: 1px solid #3285ff;
+    border-radius: 4px;
+    outline: none;
+    width: 20px;
+    cursor: pointer;
+}
+
+.controls-item input:checked{
+    /* border: 1px solid #fff; */
+    background: url('../images/icon-checked.png') no-repeat center;
+    background-size: cover;
+}
+
+.checkbox-disabled{
+    color: #9094a759;
+}
+.checkbox-disabled input{
+    border: 1px solid #9094a759;
+}
+
+
+.cameraDom img{
+    cursor: pointer;
+    width: 28px;
+    display: block;
+}
+
+#popInfoWindow2 .popInfoWindowModal{
+    width: 800px;
+}

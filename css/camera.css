@@ -1,0 +1,38 @@
+.mainbox-video{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    padding: 20px;
+}
+.mainbox-video video{
+    overflow: hidden;
+    flex: 4;
+    width: 100%;
+}
+.mainbox-faceBox{
+    background: rgba(0,0,0,0.3);
+    margin-left: 10px;
+    padding: 15px 15px 15px 10px;
+    border-radius: 4px;
+    flex: 1;
+    overflow: hidden;
+    height: 700px;
+}
+.mainbox-faceBox ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainbox-faceBox ul li{
+    display: flex;
+    
+}
+.mainbox-faceBox ul li img{
+    width: 120px;
+    display: block;
+}
+
+.faceImage-sys,.faceImage-now{
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
